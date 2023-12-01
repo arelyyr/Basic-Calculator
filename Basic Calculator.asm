@@ -1,7 +1,3 @@
-#Program Written By: Arely Rosendes, Penny Chen, Aaminah Mohammad
-#Basic Calculator Program
-#September 25, 2023
-
 #Variables to hold the data
 .data 
 
@@ -12,7 +8,7 @@ welcome: .asciiz "Welcome to the Basic Calculator Program, "	#new welcome messag
 
 ##### Ask useres whether they want to run the program #####
 
-welcome1: .asciiz "This program is designed to calculate VERY basic calculations."
+welcome1: .asciiz "This program is designed to calculate VERY basic whole number calculations."
 asktorun: .asciiz "Would you like to continue with the program? (enter 1 if yes or 0 if no): "
 runinput: .word 0
 
@@ -527,6 +523,9 @@ repeat:
 	j exit
 	
 ################# Error Prompt #################	
+# Since MIPS Assembly can be limited and provide wrong results when numbers are outside
+# the 32-bit memory, it is designed to let the user know their answer may be wrong. 
+
 errormessageblt:
    	# output error info
 	li $v0, 4		#Load print string service 
